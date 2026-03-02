@@ -27,6 +27,7 @@ import gocator
 device = gocator.Device("192.168.1.10")
 device.connect()
 print("连接成功！")
+```
 
 ## 3D 扫描数据预览（实时交互）
 
