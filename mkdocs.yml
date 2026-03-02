@@ -1,0 +1,48 @@
+site_name: GoPxL 培训手册
+site_url: https://LazyAlfred.github.io/GoPxL-Training-China/
+
+nav:
+  - 首页: index.md
+  - Gocator 传感器选型: sensor.md
+  - GoPxL 快速指南: gopxl_quickstart.md
+  - GoPxL 软件介绍: gopxl_introduction.md
+  - GoPxL 扫描成像: gopxl_scan.md
+  - GoPxL 工具介绍: gopxl_tools.md
+  - GoPxL 系统集成: gopxl_integration.md
+  - GoPxL AI工具介绍: gopxl_ai.md
+  - GoPxL Python脚本与GDK: gopxl_pythontools.md
+  - GoPxL 多传感器标定: gopxl_multisensors.md
+  - GoPxL 机器人标定: gopxl_robotcalibration.md
+
+theme:
+  name: material
+  language: zh 
+  palette:
+    # 亮色模式
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    # 深色模式（科技感更强）
+    - scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: 切换到亮色模式
+  features:
+   # - navigation.tabs
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.arithmatex: # 这里多加一个 x
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
+plugins:
+  - search
+ # - with-pdf
