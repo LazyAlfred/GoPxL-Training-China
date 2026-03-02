@@ -1,2 +1,2 @@
 # GoPxL-Training-China
-Training material 
+Gopxl Training material 
