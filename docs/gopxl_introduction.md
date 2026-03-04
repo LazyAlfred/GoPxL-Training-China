@@ -1,66 +1,152 @@
-# GoPxL 软件介绍与核心特性
+# LMI Technologies GoPxL® 软件特点介绍
 
-欢迎来到 GoPxL 的世界！
+![Version](https://img.shields.io/badge/Version-GoPxL_1.4-blue?style=for-the-badge)
+<!-- ![Platform](https://img.shields.io/badge/Platform-Web--based-orange?style=for-the-badge&logo=googlechrome)
+![Hardware](https://img.shields.io/badge/Hardware-Gocator_2D_/_3D-brightgreen?style=for-the-badge)
+![AI](https://img.shields.io/badge/AI-Anomaly_Detection-red?style=for-the-badge) -->
 
-GoPxL 是 LMI Technologies 为 Gocator 系列传感器量身打造的**新一代跨平台机器视觉软件** [1]。它不仅继承了 Gocator 经典的“开箱即用”理念，更在底层架构、数据处理能力、人工智能融合以及用户体验上进行了彻底的重构，标志着工业 3D/2D 视觉软件进入了一个全新的时代。
-
-无论您是视觉新手还是资深开发工程师，GoPxL 都能为您提供强大且灵活的工具链，以应对当今极其复杂的生产检测需求 [2]。
-
----
-
-## 1. 什么是 GoPxL？ (The "New Era" Vision)
-
-传统的工业视觉软件往往与特定的硬件强绑定，或者需要安装庞大的客户端软件。而 GoPxL 是一款**基于现代 Web 技术的分布式软件** [2]。它不仅仅是一个配置界面，而是一个完整的视觉操作系统。
-
-它的“新时代”特性主要体现在以下几个核心维度：
-
-### 1.1 灵活的跨平台部署 (Hardware Independence)
-GoPxL 打破了传统固件的算力物理限制。同一套 GoPxL 软件界面和底层代码，可以无缝运行在三种不同的硬件平台上：
-*   **On-Sensor (传感器内部运行)**：直接在 Gocator 传感器内部运行，无需工控机，适合空间紧凑、标准算力的应用场景 [3]。
-*   **On-GoMax (边缘计算加速)**：无缝桥接 GoMax NX / ORIN 硬件加速器，即插即用提升算力 [4]。
-*   **On-PC (PC 级加速)**：可作为独立的 Windows 应用程序运行（GoPxL for PC）。对于要求极高帧率或处理极高分辨率点云（如 Gocator 4000/5500 系列）的应用，PC 实例可以最大化释放 CPU 性能 [4], [3]。
-
-### 1.2 全新的节点式工具链 (Visual Tool Chaining)
-GoPxL 引入了极其直观的**工具图 (Tool Diagram)** 和节点化编程理念 [5]。
-*   **数据流向可视化**：工具之间通过可视化的蓝线连接，一个工具的输出（如滤波后的点云、几何特征、或者测量数组）可以轻松拖拽作为下一个工具的输入 [5], [6]。
-*   **数组与批处理 (Arrays & Batching)**：这是 GoPxL 的一大杀器。您可以将视野内检测到的多个零件打包成一个“数组 (Array)”传递给后续工具，系统会自动对数组内的所有零件进行并行的“批处理 (Batching)”或“聚合 (Aggregation)”测量，极大简化了多目标检测的逻辑配置 [7], [8]。
-
-### 1.3 深度融合工业 AI (Edge AI Integration)
-在传统的视觉软件中，AI 往往需要依赖第三方的复杂插件。而 GoPxL 原生内置了深度学习架构：
-*   **表面异常检测 (Surface Anomaly Detector)**：无需编写代码，只需在界面中导入“OK”与“NG”的 3D 点云样本，即可直接在 GoMax 或带有授权的 PC 上训练 AI 模型，并一键部署到生产线 [9], [10]。
-*   **2D 图像分类 (Image Classifier)**：支持对 2D 智能相机采集的图像或 3D 传感器输出的灰度图进行多类别分类，甚至能自动输出热力图 (Heatmap) 标定缺陷位置 [11], [12]。
-
-### 1.4 零代码定制专属 UI (GoHMI Designer)
-GoPxL 内置了强大的 **GoHMI Designer** 模块 [13]。
-工程师无需掌握 HTML、CSS 或 JavaScript，只需通过拖拽组件（如 3D 视图、数据图表、Pass/Fail 指示灯、控制按钮），就能为现场操作员生成一个专属的、基于网页的监控大屏 (HMI)。这个大屏可以通过任何平板、手机或 PC 的浏览器直接访问 [14], [13]。
+![GoPxL 全景图](images/1-1.png){: style="width:100%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); margin-bottom: 20px;" }
+GoPxL® 是 LMI Technologies 推出的一款 IIoT 视觉检测软件平台，专门用于在 Gocator® 3D 智能传感器和 2D 智能相机上创建和部署端到端的、基于网络的在线测量和检测解决方案。
 
 ---
 
-## 2. 现代化的用户体验 (User Interface)
+## 1. 核心软件特点
 
-GoPxL 在交互体验上采用了现代化的响应式 Web 设计，相比于经典的 Gocator 6.x 固件，它提供了更高效的工作流：
+### 🌐 现代化的基于 Web 的用户界面
 
-*   **多窗口数据查看器 (Multi-Viewer)**：您可以将 3D 点云视图无限水平或垂直切割，或者直接“弹出 (Pop-out)”到另一个显示器上。左屏幕查看宏观 3D 视角，右屏幕监控微观的剖面轮廓，互不干扰 [15], [16]。
-*   **高阶数据回放编辑器 (Replay Editor)**：内置了类似于视频剪辑软件的录制和回放工具。您可以轻松裁剪、删除或拼接扫描的 3D 数据帧，构建属于您的黄金样本库（Golden Dataset），并可随时一键导出为 `.gprec` 或 `.csv` 文件 [17], [18]。
-*   **内嵌 Python 脚本引擎 (Python GDK)**：当内置的一百多种测量工具无法满足需求时，您可以直接在网页端打开 Python 脚本工具编写自定义数学与逻辑代码，编辑器甚至支持代码折叠和高亮 [19], [20]。
+=== "🌐 跨平台访问"
+
+    无需安装任何客户端软件。只需在浏览器输入 IP，即可实现全功能操控。
+
+    <div class="video-container">
+        <a href="../images/web_ui_demo.gif" class="glightbox video-trigger">
+            ![UI演示](images/1-2.png){: style="width:450px;" }
+        </a>
+    </div>
+    
+=== "🎨 直观设计"
+
+    <div class="grid" markdown>
+    <div>
+    支持深色模式、多达 4 分割的窗口布局，以及点云伪彩色自定义。所有 UI 元素均支持响应式缩放，适配各类工业显示屏。
+    <br><br>
+    [:octicons-play-24: 点击开启 3D 渲染演示](images/ui_design.gif){ .glightbox }
+    </div>
+    ![直观设计](images/ui_design_preview.png){: style="width:300px; border-radius:10px;" .glightbox }
+    </div>
+
+=== "🔍 便捷管理"
+
+    <div class="grid" markdown>
+    <div>
+    利用拖放式工具排序和全局搜索栏快速定位。内置 <b>Tool Help</b> 嵌入式帮助指南，让新手也能快速上手复杂的视觉任务。
+    <br><br>
+    [:octicons-play-24: 点击查看工具搜索演示](images/management.gif){ .glightbox }
+    </div>
+    ![便捷管理](images/management_preview.png){: style="width:300px; border-radius:10px;" .glightbox }
+    </div>
+
+### 📐 多维度 (2D/3D) 测量与 AI 检测
+* **全数据处理**：直接处理 3D 轮廓 (Profile)、点云 (Surface)、Mesh 数据及 2D 强度图。
+* **集成 AI 工具**：内置异常检测 (Anomaly Detector)、分类、OCR 及条码读取，支持设备端推理。
+* **多层材料扫描**：配合 Gocator 5500 系列，支持多达 8 个堆叠轮廓的测量，适用于夹层玻璃、显示屏等厚度检测。
+
+### 🚀 分布式数据处理与硬件加速
+!!! tip "性能优化"
+    GoPxL 支持将数据流卸载至 **Windows PC** 或 **GoMax® NX** 智能视觉加速器，利用计算机或 GPU 算力显著提升数据密集型应用的处理帧率。
+
+### 🏭 丰富的工业通讯协议
+GoPxL 内置了主流工业协议，确保与 PLC 和机器人系统的无缝对接：
+* **标准协议**：EtherNet/IP, Modbus TCP, PROFINET, Ethernet ASCII。
+* **开发接口**：提供 GDP 协议、GoPxL SDK 和 REST API，便于开发自定义客户端。
 
 ---
 
-## 3. 支持的硬件生态
+## 2. 进阶功能展示
 
-截至目前，GoPxL 系统支持以下 LMI 硬件生态矩阵 [4], [21]：
+<div class="grid cards" markdown="1">
 
-*   **3D 线激光轮廓传感器**：Gocator 2100/2300 (C/D 修订版), Gocator 2400, 2500, 2600 旗舰系列。
-*   **2D 智能相机**：全面支持全新一代 Gocator 2D 智能相机（提供完整的 2D 图像处理、条码/OCR 识别及照明控制堆栈）。
-*   **硬件加速器**：GoMax NX / ORIN / ORIN+。
+-   :material-layers-triple:{ .lg .middle } __数组与批量处理__
+    ---
+    通过 `Array Create` 实现特征捆绑。开启 **Batching** 模式可用单一工具独立测量所有重复特征（如引脚）。
 
-!!! info "兼容性提示"
-    早期的旧款 Gocator（如 G2342, G2880, G200）以及第一代 GoMax 目前不被 GoPxL 支持 [4], [22]。
+-   :material-vector-combine:{ .lg .middle } __多传感器校准__
+    ---
+    提供图形化向导，支持将并排、多角度或 360° 布局的多台传感器数据拼接为单一宽轮廓或 Mesh。
 
+-   :material-monitor-dashboard:{ .lg .middle } __定制化 HMI__
+    ---
+    内置 **GoHMI Designer**，包含 40 多个拖放式组件，轻松搭建专属的 OK/NG 状态及测量值显示界面。
+
+-   :material-play-circle-outline:{ .lg .middle } __仿真与回放__
+    ---
+    提供 **Emulator** 进行离线模拟，以及 **Replay Editor** 支持 `.gprec`, `.sur` 等格式的数据导入导出。
+
+</div>
+
+## 3. 行业应用与市场
+
+### 🏭 核心目标行业
+
+| 行业 | 典型应用场景 |
+| :--- | :--- |
+| **汽车与新能源** | 引擎缸体检测、焊缝引导、动力电池在线检测、孔位标定。 |
+| **3C 电子/半导体** | PCB 板检测、连接器引脚测量、手机显示屏多层材料缺陷检测。 |
+| **医疗与食品包装** | 医疗包装完整性检测、包装盒空隙测量、食品质量与色彩验证。 |
+| **通用制造** | 木板质量检测、线缆表面污损检测、紧固件三维尺寸测量。 |
+
+### 🎯 核心检测任务流
+
+```mermaid
+graph LR
+    A[高精度测量] --> B[AI 缺陷检测]
+    B --> C[特征定位]
+    C --> D[高速 OCR/读码]
+```
 ---
 
-## 结语
+## 👥 适用用户群体
 
-GoPxL 不仅仅是一次软件版本的升级，它是 LMI 针对工业 4.0 和智能制造提出的一套**全面、可扩展的视觉操作系统方案**。
+GoPxL 凭借其高扩展性和直观的用户体验，主要面向以下三类核心群体：
 
-在接下来的章节中，我们将带您从零开始，逐步掌握如何在这款现代化的平台上完成硬件连接、点云扫描、3D 测量以及与工业设备的系统集成。
+!!! example "终端用户与制造商"
+    适用于需要可靠、灵活且易于维护的视觉系统，并希望系统能够随着生产需求变化而灵活扩展的企业。
+
+!!! example "系统集成商 (Integrators)"
+    适用于追求快速部署、跨工位便捷扩展的团队。利用内置硬件加速特性，部分场景下甚至无需额外配置工控机（PC）即可完成部署。
+
+!!! example "Gocator® 传感器现有用户"
+    适用于需要在同一 3D 生态系统内增加 2D 检测功能，或希望升级原有 Gocator 固件以获取更强大 AI 及数组工具的用户。
+
+## 🏭 核心目标行业
+
+GoPxL 的高精度、高速处理以及强大的多维（2D/3D）工具库，使其能够广泛应对以下行业的工业检测难题：
+
+| 行业分类 | 核心应用点 |
+| :--- | :--- |
+| **汽车制造与新能源** | 引擎缸体/气缸盖检测、焊缝引导、胶路检测、动力电池在线检测。 |
+| **3C 电子与半导体** | PCB 板检测、连接器引脚 (Pins) 计数与测量、手机多层材料厚度及缺陷检测。 |
+| **医疗与食品包装** | 医疗包装完整性检测、包装盒空隙测量、食品（如巧克力、软糖）质量与色彩验证。 |
+| **通用制造** | 木板质量检测、紧固件三维尺寸测量、线缆/编织线表面污损检测。 |
+
+
+## 🎯 典型检测应用场景
+
+从原型开发到量产，GoPxL 在生产现场可即时优化并执行以下核心任务：
+
+### 1. 高精度尺寸与形位测量
+以物理单位精确测量 **间隙、面差（偏移量）、直径、角度、高度及体积**，确保产品符合严苛的公差要求。
+
+### 2. AI 缺陷检测与分类
+结合 **异常检测 (Anomaly Detector)** 和分类工具，实时识别复杂表面或反光材料上的划痕、污染、凹陷、错印及特征缺失，有效降低过杀和漏杀率。
+
+### 3. 特征定位与动态追踪
+即使在密集的电路板或复杂的组件上，也能高精度定位引脚、端口或零件特征，并支持 **机器人视觉引导**。
+
+### 4. 高速 OCR 与读码追溯
+针对高速运动目标，提供高达 **84 FPS** 的成像能力，在不降低生产速度的前提下，实时读取序列号、DMC 码及条码标签。
+
+
+!!! info "下一步建议"
+    如果您已经了解了 GoPxL 的基本概况，建议前往 [**快速上手**](gopxl_quickstart.md) 章节开始您的第一个视觉任务配置。
+
