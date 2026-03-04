@@ -1,0 +1,1337 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://LazyAlfred.github.io/GoPxL-Training-China/gopxl_scan/">
+      
+      
+        <link rel="prev" href="../gopxl_quickstart/">
+      
+      
+        <link rel="next" href="../gopxl_tools/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>扫描成像 - GoPxL 培训手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gopxl-acquire-alignment" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="GoPxL 培训手册" class="md-header__button md-logo" aria-label="GoPxL 培训手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GoPxL 培训手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              扫描成像
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="切换到亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GoPxL 培训手册" class="md-nav__button md-logo" aria-label="GoPxL 培训手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GoPxL 培训手册
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1️⃣ 准备工作
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1️⃣ 准备工作
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sensor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    传感器选型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopxl_introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件环境介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2️⃣ 基础操作
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2️⃣ 基础操作
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopxl_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    扫描成像
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    扫描成像
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-scan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 采集模式 (Scan Mode)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 采集模式 (Scan Mode)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-uniform-point-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 数据格式：Uniform 与 Point Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-exposure-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 曝光设置 (Exposure Control)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 曝光设置 (Exposure Control)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 曝光模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-hdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 高动态范围 (HDR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-triggering-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 触发与运动 (Triggering &amp; Motion)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 触发与运动 (Triggering &amp; Motion)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-trigger-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 触发源 (Trigger Source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 运动标定 (Motion)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-active-area-subsampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 扫描区域与降采样 (Active Area &amp; Subsampling)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 传感器校准 (Alignment)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 传感器校准 (Alignment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 常用向导校准 (最高 5 自由度)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 高精度工具校准 (6 自由度)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 故障排查 (Troubleshooting)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 故障排查 (Troubleshooting)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么扫描出的点云有“空洞”或红/蓝斑点？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么画面有拖影或比例拉伸变形？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopxl_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopxl_integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    系统集成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3️⃣ 高级功能
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3️⃣ 高级功能
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopxl_ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 工具介绍
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopxl_pythontools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python 脚本与 GDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopxl_multisensors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多传感器标定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gopxl_robotcalibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    机器人标定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-scan-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 采集模式 (Scan Mode)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 采集模式 (Scan Mode)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-uniform-point-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 数据格式：Uniform 与 Point Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-exposure-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 曝光设置 (Exposure Control)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 曝光设置 (Exposure Control)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 曝光模式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-hdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 高动态范围 (HDR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-triggering-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 触发与运动 (Triggering &amp; Motion)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 触发与运动 (Triggering &amp; Motion)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-trigger-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 触发源 (Trigger Source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 运动标定 (Motion)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-active-area-subsampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 扫描区域与降采样 (Active Area &amp; Subsampling)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 传感器校准 (Alignment)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 传感器校准 (Alignment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 常用向导校准 (最高 5 自由度)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 高精度工具校准 (6 自由度)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 故障排查 (Troubleshooting)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 故障排查 (Troubleshooting)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么扫描出的点云有“空洞”或红/蓝斑点？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么画面有拖影或比例拉伸变形？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gopxl-acquire-alignment">GoPxL 扫描成像与采集配置 (Acquire &amp; Alignment)</h1>
+<p>在 GoPxL 中，<strong>Acquire (采集)</strong> 页面是配置传感器成像质量、触发逻辑以及空间坐标校准的核心控制台 [1]。只有获得高质量的原始图像或点云，后端的测量工具才能准确工作。该页面的设置分为两部分：适用于整个传感器组的全局设置（默认显示为 Gocator 0），以及适用于组内单个传感器的独立属性（Sensor Properties）[1], [2]。</p>
+<hr />
+<h2 id="1-scan-mode">1. 采集模式 (Scan Mode)</h2>
+<p>在开始配置前，首先需要确定传感器的运行模式 [3]：</p>
+<ul>
+<li><strong>Image (图像模式)</strong>：输出 2D 灰度视频图像。通常用于前期安装调试、调节曝光时间，以及排查环境杂散光问题 [4]。</li>
+<li><strong>Profile (轮廓模式)</strong>：输出 2D 截面轮廓线，内部自动处理视频图像以生成轮廓数据，用于截面测量 [4]。</li>
+<li><strong>Surface (表面模式)</strong>：通过移动拼接输出 3D 点云或高度图 [4]。针对不同的运动场景，GoPxL 提供了四种表面生成方式 [5]：<ul>
+<li><strong>Fixed Length (固定长度)</strong>：生成指定固定长度的表面 [5]。</li>
+<li><strong>Variable Length (可变长度)</strong>：在外部数字输入信号保持高电平时连续采集，信号变低或达到最大长度时结束，适用于机械臂抓取等场景 [6]。</li>
+<li><strong>Rotational (旋转)</strong>：专为扫描圆形物体（如轮胎、瓶子）设计，表面数据会根据编码器的索引脉冲（Index Pulse）自动对齐起点 [7]。</li>
+<li><strong>Continuous (连续)</strong>：无限输出数据，通常配合“零件检测 (Part Detection)”功能使用，以便在传送带上分离出独立的零件 [5], [8]。</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-uniform-point-cloud">1.1 数据格式：Uniform 与 Point Cloud</h3>
+<ul>
+<li><strong>Enable Uniform Spacing (启用均匀间距)</strong>：启用后，传感器会将原始点云重新采样（Resample）为具有固定 X 轴间距的均匀网格数据 [4], [9]。这是使用大多数 3D 测量工具和滤波器（如中值滤波、孔洞填补）的前提 [10]。</li>
+<li><strong>Point Cloud (点云)</strong>：禁用均匀间距时，输出最原始的点云数据，此时传感器能以最高帧率运行，但不适用于所有测量工具 [4], [11]。</li>
+</ul>
+<hr />
+<h2 id="2-exposure-control">2. 曝光设置 (Exposure Control)</h2>
+<p>曝光决定了传感器接收反射光的量。正确的曝光对于生成精确的 3D 点至关重要。你可以在 <strong>Sensor Properties &gt; Exposure</strong> 中为每个传感器独立设置 [12]。</p>
+<h3 id="21">2.1 曝光模式</h3>
+<ul>
+<li><strong>Single (单曝光)</strong>：设置一个固定的曝光时间，适用于表面材质和反光率均一的物体 [13], [14]。</li>
+<li><strong>Multiple (多曝光)</strong>：允许设置多达 5 个不同的曝光时间（G3 传感器为 3 个）。传感器会合并这些曝光数据，非常适用于同一个视野内既有深色吸光材料、又有高反光金属的复杂工件 [13], [15]。</li>
+<li><strong>Dynamic (动态曝光)</strong>：传感器会根据前一帧的分析结果，在设定的最小和最大阈值范围内自动调整下一帧的曝光 [14], [16]。</li>
+</ul>
+<h3 id="22-hdr">2.2 高动态范围 (HDR)</h3>
+<div class="admonition tip">
+<p class="admonition-title">HDR 模式 (仅限 Gocator 2600 系列)</p>
+<p>Gocator 2600 提供了在 <strong>Advanced (高级)</strong> 菜单中的 <strong>HDR 模式</strong>。开启后，传感器在内部对视频图像应用伽马曲线压缩高强度值，从而在单次曝光下就能大幅提升动态范围。这可以在不牺牲扫描帧率（相比多曝光模式）的情况下，有效扫描闪亮的金属部件 [17], [18]。</p>
+</div>
+<hr />
+<h2 id="3-triggering-motion">3. 触发与运动 (Triggering &amp; Motion)</h2>
+<h3 id="31-trigger-source">3.1 触发源 (Trigger Source)</h3>
+<p>在 <strong>Trigger</strong> 面板中，您可以选择以下触发方式：
+* <strong>Time (时间触发)</strong>：利用内部时钟按固定的频率（Hz）进行连续扫描。常用于传感器静止、物体匀速运动的场景 [19]。
+* <strong>Encoder (编码器触发)</strong>：根据外部编码器的脉冲进行扫描 [20]。这是传送带扫描最常用的方式，能确保 3D 模型在 Y 轴（运动方向）不失真。编码器触发支持三种逻辑 [20], [21]：
+    * <strong>Track Backward (追踪后退)</strong>：当传送带倒退时停止扫描，直到它再次前进并越过之前倒退的距离后才恢复。
+    * <strong>Ignore Backward (忽略后退)</strong>：仅在向前运动时触发。
+    * <strong>Bi-directional (双向)</strong>：无论前进还是后退都触发扫描。</p>
+<h3 id="32-motion">3.2 运动标定 (Motion)</h3>
+<p>如果您使用编码器，必须在 <strong>Motion</strong> 面板中准确输入 <strong>Encoder Resolution (编码器分辨率)</strong>，单位为 mm/tick（每脉冲毫米数）[22], [23]。如果使用时间触发，则需要输入传送带的实际 <strong>Speed (移动速度)</strong> [23]。准确的运动设置是保证 Y 轴测量精度的基石。</p>
+<hr />
+<h2 id="4-active-area-subsampling">4. 扫描区域与降采样 (Active Area &amp; Subsampling)</h2>
+<p>通过限制传感器的视野（FOV），可以大幅减少处理数据量并提升性能。</p>
+<ul>
+<li><strong>Active Area (有效区域)</strong>：在传感器属性中，您可以裁剪 X 轴视野（X FOV）和 Z 轴测量范围（Z Range）[24], [25]。</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">帧率优化秘籍</p>
+<p>缩小 <strong>Z 轴</strong> 的搜索窗口是提升传感器最高扫描频率最有效的方法 [2], [25]。如果您不需要用到传感器的全部量程，请尽量缩小 Z Range 并将其贴近工件实际高度。</p>
+</div>
+<ul>
+<li><strong>Subsampling (子采样)</strong>：通过减少用于数据采集的相机行/列数，在保持视野不变的情况下降低数据密度，从而提高扫描速度并降低 CPU 占用 [26]。</li>
+</ul>
+<hr />
+<h2 id="5-alignment">5. 传感器校准 (Alignment)</h2>
+<p>传感器校准（Alignment）旨在补偿传感器安装时产生的物理偏差（如倾斜、旋转），将数据从“传感器内部坐标系”转换为物理世界的“系统坐标系”（例如以传送带表面为 Z=0 平面）[27], [28], [29]。未校准的传感器可能会输出倾斜或拉伸失真的数据，导致测量不准 [30], [31]。</p>
+<h3 id="51-5">5.1 常用向导校准 (最高 5 自由度)</h3>
+<p>GoPxL 在 Acquire 页面提供了一个非常直观的校准向导（点击 <strong>Align...</strong>），支持以下标定靶 [32]：
+* <strong>Stationary Flat Surface (静止平面)</strong>：最基础也最常用的方法。直接对着静止的传输带或加工平台扫描，校正 Z 轴原点以及 X 轴/Y 轴的倾斜角 [33]。
+* <strong>Stationary / Moving Bar (校准杆)</strong>：使用标准机加工的矩形杆，不仅能校正高度和倾斜，还能解决多传感器拼接时的 Y 轴偏移和 Z 轴旋转（偏航角）问题 [34], [35]。
+* <strong>Polygon (多边形靶标)</strong>：用于多传感器环形包围（360度扫描）布局 [36]。</p>
+<h3 id="52-6">5.2 高精度工具校准 (6 自由度)</h3>
+<p>对于 G2 系列传感器且需要极高精度的 6 自由度（包含 X 轴旋转补偿）拼接，需要使用专门的测量工具进行校准 [37], [38]：
+* <strong>Surface Align Wide</strong>：用于并排多传感器宽视野拼接，需要使用定制的金字塔阵列标定板（Truncated Pyramids）[39], [40]。
+* <strong>Surface Align Ring</strong>：用于环形布局拼接，使用双面截头金字塔标定靶 [39], [41]。</p>
+<div class="admonition tip">
+<p class="admonition-title">提示</p>
+<p>使用工具校准时，必须先在 Acquire 页面点击 <strong>Clear Alignment (清除校准)</strong>，确保传感器处于未校准的原始坐标状态 [41], [42]。</p>
+</div>
+<hr />
+<h2 id="6-troubleshooting">6. 故障排查 (Troubleshooting)</h2>
+<h3 id="_1">为什么扫描出的点云有“空洞”或红/蓝斑点？</h3>
+<ol>
+<li><strong>曝光不当</strong>：切换到 <strong>Image 模式</strong> 观察。蓝色像素代表欠曝，红色像素代表过曝或饱和（导致无法生成 3D 点）。请调整 Exposure 时间或开启 Multiple 多曝光 [43], [44]。</li>
+<li><strong>遮挡 (Shadowing)</strong>：调节传感器安装角度，避免激光线被工件自身的陡峭边缘挡住相机视线 [45]。</li>
+<li><strong>材质吸光</strong>：检查被测物是否是黑色橡胶等强吸光材质，如果是，需在 <strong>Advanced &gt; Material type</strong> 中尝试调整或增大曝光 [46], [47]。</li>
+</ol>
+<h3 id="_2">为什么画面有拖影或比例拉伸变形？</h3>
+<ol>
+<li><strong>触发与速度不匹配</strong>：如果是时间触发，检查工件的实际运动速度是否与设定的 Speed 匹配。如果是编码器触发，检查 Encoder Resolution 换算是否正确 [23]。</li>
+<li><strong>Z Angle 误差</strong>：如果扫描出的长方形变成了一个斜的平行四边形（X 轴方向有明显的倾斜拉伸），通常是因为传感器安装时存在偏航角（Z Angle）。请使用 Bar（校准杆）执行一次对齐校准来消除该余弦误差 [31]。</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "navigation.expand"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
