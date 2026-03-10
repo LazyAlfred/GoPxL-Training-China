@@ -99,7 +99,7 @@
 * **Multiple (多曝光)**：允许设置多达 5 个不同的曝光时间（G3 传感器为 3 个）。传感器会合并这些曝光数据，非常适用于同一个视野内既有深色吸光材料、又有高反光金属的复杂工件。
 * **Dynamic (动态曝光)**：传感器会根据前一帧的分析结果，在设定的最小和最大阈值范围内自动调整下一帧的曝光。
 <div align="center">
-    <img src="../images/gopxl_scan/xspacing.gif" width="900" alt="图片描述">
+    <img src="../images/gopxl_scan/exposure.gif" width="900" alt="图片描述">
     <p style="color: #666; font-size: 14px;">修改曝光参数</p>
 </div>
 
