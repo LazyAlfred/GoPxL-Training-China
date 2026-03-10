@@ -18,7 +18,7 @@ def extract_gif_segment(input_video, output_gif, start_time, end_time):
     clip.close()
 if __name__ == "__main__":
     # 根据你截图中的文件名进行设置
-    input_file = "Introducing GoPxL - IIoT Vision Inspection Software from LMI Technologies.mp4" # 请确保文件名与文件夹中完全一致
-    output_file = "docs/images/web_ui_demo.gif"
+    input_file = "Array show.mp4" # 请确保文件名与文件夹中完全一致
+    output_file = "docs/images/Array_show.gif"
     
-    extract_gif_segment(input_file, output_file, 18, 22)
+    extract_gif_segment(input_file, output_file, 0, 20)

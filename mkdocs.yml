@@ -3,9 +3,9 @@ site_url: https://LazyAlfred.github.io/GoPxL-Training-China/
 
 nav:
   - 首页: index.md
-  - 1️⃣ 准备工作:
-      - 传感器选型: sensor.md
-      - 软件环境介绍: gopxl_introduction.md
+  - 1️⃣ 硬件和软件介绍:
+      - Gocator<sup>®</sup>传感器选型: sensor.md
+      - GoPxL<sup>®</sup> 软件特点介绍: gopxl_introduction.md
   - 2️⃣ 基础操作:
       - 快速指南: gopxl_quickstart.md
       - 扫描成像: gopxl_scan.md
