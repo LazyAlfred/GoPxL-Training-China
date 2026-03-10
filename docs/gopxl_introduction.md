@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # GoPxL<sup>®</sup> 软件特点介绍
 
 ![Version](https://img.shields.io/badge/Version-GoPxL_1.4-blue?style=for-the-badge)
@@ -13,7 +13,6 @@ GoPxL® 是 LMI Technologies 推出的一款 IIoT 视觉检测软件平台，专
 ### 🌐 现代化的基于 Web 的用户界面
 
 === "🌐 跨平台访问"
-<<<<<<< HEAD
     <div style="margin: 20px 0; text-align: left;">
         <a href="../images/gopxl_introduction/web_ui_demo.gif" class="glightbox video-trigger">
             ![UI演示](../images/gopxl_introduction/web_ui_demo.png)
@@ -37,52 +36,6 @@ GoPxL® 是 LMI Technologies 推出的一款 IIoT 视觉检测软件平台，专
 ### 📐 多维度 (2D/3D) 测量与 AI 检测
 
 === "📊 全数据处理"
-=======
-
-    无需安装任何客户端软件。只需在浏览器输入 IP，即可实现全功能操控。
-
-    <div class="video-container">
-        <a href="../images/web_ui_demo.gif" class="glightbox video-trigger">
-            ![UI演示](images/1-2.png){: style="width:450px;" }
-        </a>
-    </div>
-    
-=== "🎨 直观设计"
-
-    <div class="grid" markdown>
-    <div>
-    支持深色模式、多达 4 分割的窗口布局，以及点云伪彩色自定义。所有 UI 元素均支持响应式缩放，适配各类工业显示屏。
-    <br><br>
-    [:octicons-play-24: 点击开启 3D 渲染演示](images/ui_design.gif){ .glightbox }
-    </div>
-    ![直观设计](images/ui_design_preview.png){: style="width:300px; border-radius:10px;" .glightbox }
-    </div>
-
-=== "🔍 便捷管理"
-
-    <div class="grid" markdown>
-    <div>
-    利用拖放式工具排序和全局搜索栏快速定位。内置 <b>Tool Help</b> 嵌入式帮助指南，让新手也能快速上手复杂的视觉任务。
-    <br><br>
-    [:octicons-play-24: 点击查看工具搜索演示](images/management.gif){ .glightbox }
-    </div>
-    ![便捷管理](images/management_preview.png){: style="width:300px; border-radius:10px;" .glightbox }
-    </div>
-
-### 📐 多维度 (2D/3D) 测量与 AI 检测
-* **全数据处理**：直接处理 3D 轮廓 (Profile)、点云 (Surface)、Mesh 数据及 2D 强度图。
-* **集成 AI 工具**：内置异常检测 (Anomaly Detector)、分类、OCR 及条码读取，支持设备端推理。
-* **多层材料扫描**：配合 Gocator 5500 系列，支持多达 8 个堆叠轮廓的测量，适用于夹层玻璃、显示屏等厚度检测。
-
-### 🚀 分布式数据处理与硬件加速
-!!! tip "性能优化"
-    GoPxL 支持将数据流卸载至 **Windows PC** 或 **GoMax® NX** 智能视觉加速器，利用计算机或 GPU 算力显著提升数据密集型应用的处理帧率。
-
-### 🏭 丰富的工业通讯协议
-GoPxL 内置了主流工业协议，确保与 PLC 和机器人系统的无缝对接：
-* **标准协议**：EtherNet/IP, Modbus TCP, PROFINET, Ethernet ASCII。
-* **开发接口**：提供 GDP 协议、GoPxL SDK 和 REST API，便于开发自定义客户端。
->>>>>>> d1d09f9 (feat: 优化 GoPxL 软件介绍页面，增加动态 GIF 演示和 CSS 悬停效果)
 
     直接处理 3D 轮廓 (Profile)、点云 (Surface)、Mesh 数据及 2D 强度图，提供全方位的视觉分析。
 
