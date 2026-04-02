@@ -12,14 +12,14 @@ def extract_gif_segment(input_video, output_gif, start_time, end_time):
     
     # 4. 导出为 GIF
     print(f"开始导出...")
-    optimized_clip.write_gif(output_gif, fps=12)
+    optimized_clip.write_gif(output_gif, fps=36)
     
     # 记得关闭文件释放内存
     clip.close()
 if __name__ == "__main__":
     # 根据你截图中的文件名进行设置
 
-    input_file = "Array show.mp4" # 请确保文件名与文件夹中完全一致
-    output_file = "docs/images/Array_show.gif"
+    input_file = "test.mp4" # 请确保文件名与文件夹中完全一致
+    output_file = "docs/images/test.gif"
     
-    extract_gif_segment(input_file, output_file, 0, 20)
+    extract_gif_segment(input_file, output_file, 2, 12)

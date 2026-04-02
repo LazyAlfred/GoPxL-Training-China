@@ -1,4 +1,15 @@
-# 🚀 GoPxL 智能 3D 视觉培训手册 <p style="font-size:14px;color:gray;">编辑：Alfred Pu</p>
+# 🚀 GoPxL 智能 3D 视觉培训手册
+
+![Version](https://img.shields.io/badge/VERSION-GoPxL_1.4-0078D7?style=for-the-badge)
+![Author](https://img.shields.io/badge/AUTHOR-Alfred Pu-6f42c1?style=for-the-badge)
+![GoPxL 全景图](images/gopxl_introduction/1-1.png){: style="width:100%; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); margin-bottom: 20px;" }
+
+??? quote "📝 手册更新日志 (Changelog)"
+    
+    | 说明书版本 | 更新日期 | 更新者 | 更新说明 |
+    | :--- | :--- | :--- | :--- |
+    | **V1.0** | <code style="white-space: nowrap;">2026-03-20</code> | <span style="white-space: nowrap;">**Alfred&nbsp;Pu**</span> | 初始首页信息 |
+
 
 欢迎来到 GoPxL 官方实战指南。
 

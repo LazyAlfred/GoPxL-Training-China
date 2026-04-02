@@ -11,7 +11,7 @@ nav:
       - 扫描成像: gopxl_scan.md
       - 工具介绍: gopxl_tools.md
       - 系统集成: gopxl_integration.md
-  - 3️⃣ 高级功能:
+  - 3️⃣ 高级功能（还在施工）:
       - AI 工具介绍: gopxl_ai.md
       - Python 脚本与 GDK: gopxl_pythontools.md
       - 多传感器标定: gopxl_multisensors.md

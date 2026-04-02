@@ -1,5 +1,16 @@
 # GoPxL 扫描成像与采集配置
 
+![Version](https://img.shields.io/badge/VERSION-GoPxL_1.4-0078D7?style=for-the-badge)
+![Author](https://img.shields.io/badge/AUTHOR-Edgar Duan-6f42c1?style=for-the-badge)
+
+??? quote "📝 手册更新日志 (Changelog)"
+    
+    | 说明书版本 | 更新日期 | 更新者 | 更新说明 |
+    | :--- | :--- | :--- | :--- |
+    | **V1.0** | <code style="white-space: nowrap;">2026-04-01</code> | <span style="white-space: nowrap;">**Edgar&nbsp;Duan**</span> | 完成初始版本|
+
+欢迎使用 GoPxL！本指南涵盖了从硬件连接到最终输出数据的核心步骤，帮助您快速上手 Gocator 传感器。
+
 只有获得高质量的原始图像或点云，后端的测量工具才能准确工作。在 GoPxL 中，**Acquire (采集)** 页面是配置传感器成像质量、触发逻辑以及空间坐标校准的核心控制台。该页面的设置分为两部分：适用于整个传感器组的全局设置（默认显示为 Gocator 0），以及适用于组内单个传感器的独立属性（Sensor Properties）,本章节着重介绍单传感器系统的全局设置和传感器参数设置，并详细介绍如何选择合适的参数采集良好的点云数据。
 
 ---

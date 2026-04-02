@@ -1,5 +1,13 @@
 # GoPxL 系统集成与通信 (Communicate)
 
+![Version](https://img.shields.io/badge/VERSION-GoPxL_1.4-0078D7?style=for-the-badge)
+![Author](https://img.shields.io/badge/AUTHOR-Alfred Pu-6f42c1?style=for-the-badge)
+
+??? quote "📝 手册更新日志 (Changelog)"
+    
+    | 说明书版本 | 更新日期 | 更新者 | 更新说明 |
+    | :--- | :--- | :--- | :--- |
+    | **V0.8** | <code style="white-space: nowrap;">2026-04-01</code> | <span style="white-space: nowrap;">**Alfred&nbsp;Pu**</span> | 完成纯文字版本，还需要截图 |
 在完成扫描成像（Acquire）和工具检测（Inspect）后，最后一步是将测量结果、Pass/Fail 判定或 3D 点云数据发送给外部系统。
 
 在 GoPxL 的 **Communicate (通信)** 页面，您可以配置传感器与 PLC、机器人、剔除机构或定制上位机软件的交互逻辑 [1, 2]。
