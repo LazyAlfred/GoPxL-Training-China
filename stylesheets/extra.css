@@ -1,174 +1,132 @@
-/* 1. 触发器容器：改为 inline-block，使其宽度随图片伸展 */
+/* ================================================= */
+/* 1. 动态演示展示 (针对 GIF 直接循环播放)              */
+/* ================================================= */
 .video-trigger {
     position: relative;
-    display: inline-block;  /* 核心：容器宽度听图片的 */
-    vertical-align: top;    /* 顶部对齐，防止微小错位 */
-    
-    /* 移除之前的强制固定高度 */
-    /* height: 350px; (删掉这行) */ 
-    
-    line-height: 0;         /* 消除底部幽灵间隙 */
-    border-radius: 10px;
+    display: inline-block;  /* 宽度随图片伸展 */
+    vertical-align: top;
+    margin: 20px auto;      /* 居中显示 */
+    line-height: 0;         /* 消除底部间隙 */
+    border-radius: 12px;    /* 圆角边框 */
     overflow: hidden;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-    
-    /* 增加一个精致的边框 (回应你之前的要求) */
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* 悬停时增强边框和阴影 */
+/* 悬停效果：仅保留轻微浮起和边框变蓝，不显示任何文字遮罩 */
 .video-trigger:hover {
-    border-color: rgba(0,0,0,0.2);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    border-color: #2196f3;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(33, 150, 243, 0.15);
 }
 
-/* 2. 缩略图：在这里强制统一高度！ */
+/* 图片/GIF 设置 */
 .video-trigger img {
     display: block;
-    
-    /* 强制所有图片高度为 300px (你可以根据需要调整这个值) */
-    height: 300px !important; 
-    
-    /* 宽度设为 auto，让它根据图片原始比例自动计算，从而不变形且显示完整 */
-    width: auto !important;
-    
-    /* 移除之前的裁剪属性 */
-    /* object-fit: cover; (删掉这行) */
-    
+    height: 350px !important; /* 统一高度，可根据需求微调 */
+    width: auto !important;   /* 等比例缩放，确保不变形 */
+    max-width: 100%;          /* 兼容移动端 */
     margin: 0 !important;
-    transition: all 0.4s ease;
 }
 
-/* 3. 悬停遮罩层和文字：也随容器宽度伸展 */
+/* 彻底移除之前的“点击查看”遮罩层文字和背景 */
 .video-trigger::after {
-    content: "▶ 点击播放动态演示";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;           /* 此时 100% 会精准匹配 inline-block 的容器宽度 */
-    height: 100%;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    color: white !important;
-    font-size: 16px;
-    font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    background: rgba(0, 0, 0, 0.2);
-    
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 5;
+    display: none !important; /* 强制隐藏浮标 */
+    content: none !important;
 }
 
-/* 悬停时显示文字 */
-.video-trigger:hover::after {
-    opacity: 1;
-}
-
-/* 4. 遮罩层文字 */
-.video-trigger::after {
-    content: "▶ 点击查看动态演示";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;           /* 此时 100% 会精准匹配 inline-block 的容器宽度 */
-    height: 100%;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    color: white !important;
-    font-size: 16px;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.2);
-    
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 5;
-}
-
-/* 5. 悬停时显示遮罩 */
-.video-trigger:hover::after {
-    opacity: 1;
-}
-
-/* --- Glightbox 插件弹窗美化 --- */
-
-/* 弹窗背景调暗 */
-.glightbox-container {
-    --glightbox-color-background: rgba(0, 0, 0, 0.9);
-}
-
-/* 弹窗内图片样式 */
-.gslide-image img {
-    background-color: #1a1a1a; 
-    border: 1px solid #333;
-    border-radius: 4px;
-    box-shadow: 0 0 50px rgba(0,0,0,0.5);
-}
-
-sup {
-    font-size: 0.6em;       /* 缩小到原来的 60% */
-    vertical-align: super;  /* 保持在上角，但你可以微调为 top 或 baseline */
-    margin-left: 2px;       /* 与前面的文字保持一点点距离 */
-    position: relative;
-    top: -0.2em;            /* 手动微调垂直高度，避免撑开行高 */
-}
-
-/* 让进阶功能卡片看起来像可以点击的按钮 */
-.grid.cards a.glightbox {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.grid.cards li:has(a.glightbox):hover {
-    border-color: #2196f3;      /* 悬停时边框变蓝 */
-    transform: translateY(-4px); /* 向上轻微浮动 */
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-/* 1. 进阶功能卡片：基础样式微调 */
+/* ================================================= */
+/* 2. 进阶功能卡片 (Grid Cards) 全卡片点击优化          */
+/* ================================================= */
 .grid.cards li {
-    position: relative;        /* 关键：为伪元素提供定位基准 */
+    position: relative;
     transition: all 0.3s ease;
-    cursor: pointer;          /* 整个卡片鼠标悬停变手型 */
+    border-radius: 8px;
+    border: 1px solid #efefef;
 }
 
-/* 2. 悬停反馈：整个卡片浮起并改变边框颜色 */
 .grid.cards li:hover {
-    border-color: #2196f3;     /* 悬停时边框变蓝 */
-    box-shadow: 0 8px 24px rgba(33, 150, 243, 0.15); /* 增加蓝色柔和阴影 */
-    transform: translateY(-5px); /* 向上浮动 */
+    border-color: #2196f3;
+    box-shadow: 0 10px 25px rgba(33, 150, 243, 0.15);
+    transform: translateY(-5px);
 }
 
-/* 3. 卡片内的标题链接：修正基础样式 */
+/* 核心：让 a 标签的点击区域覆盖整张卡片 */
 .grid.cards a.glightbox {
     text-decoration: none;
     color: inherit;
-    display: inline-block;     /* 保持内联块级，不撑开父级 */
     font-weight: bold;
 }
 
-/* 4. 核心魔法：使用 ::after 伪元素让点击区域铺满整个卡片 */
 .grid.cards a.glightbox::after {
-    content: "";              /* 生成空元素 */
-    position: absolute;       /* 绝对定位 */
-    top: 0;                   /* 精准对齐卡片顶部 */
-    left: 0;                  /* 精准对齐卡片左侧 */
-    width: 100%;              /* 撑满卡片宽度 */
-    height: 100%;             /* 撑满卡片高度 */
-    z-index: 10;              /* 确保它在图标和文字上方 */
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 10;
 }
 
-/* 5. 小修补：防止 HMI 标题下的 hr 妨碍点击 */
-.grid.cards li hr {
-    margin: 10px 0;
+/* ================================================= */
+/* 3. 首页六宫格大图标专属样式 (.feature-grid)          */
+/* ================================================= */
+.feature-grid.cards li {
+    padding: 0 !important;
+}
+
+.feature-grid.cards li a {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;     
+    gap: 15px;              
+    font-size: 1.15em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.feature-grid.cards li a .twemoji {
+    font-size: 65px !important; 
+    color: #2196f3;             
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-grid.cards li:hover a .twemoji {
+    transform: translateY(-8px) scale(1.15);
+    color: #1976d2; 
+}
+
+/* ================================================= */
+/* 4. 细节美化 (角标、弹窗等)                          */
+/* ================================================= */
+sup {
+    font-size: 0.65em;
+    vertical-align: super;
+    margin-left: 1px;
+    color: #999; 
+}
+
+.glightbox-container {
+    --glightbox-color-background: rgba(0, 0, 0, 0.92);
+}
+
+.gslide-image img {
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+/* 让特定图片宽度与文字版面对齐，高度自适应 */
+.full-width-img {
+    width: 100%;           /* 宽度强制铺满 */
+    margin: 20px 0;
+    border-radius: 12px;   /* 保持圆角风格一致 */
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.full-width-img img {
+    width: 100% !important; /* 宽度 100% */
+    height: auto !important; /* 高度根据比例自动缩放，不再限制死 350px */
+    display: block;
 }
