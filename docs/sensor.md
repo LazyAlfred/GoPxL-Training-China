@@ -79,3 +79,10 @@
 !!! info "下一步建议：验证与测试"
     1.  **查阅详细规格**：请查阅用户手册末尾的参数表，核对 Z 向线性度百分比、不同测量范围下的频率曲线图等。
     2.  **申请样机测试**：由于实际的 Z 轴精度会受目标物表面反光特性的显著影响，建议联系 **LMI Technologies** 官方销售或授权代理商，申请样机对真实材质进行实测。
+
+---
+
+<div align="center" style="margin-top: 30px; margin-bottom: 20px;">
+  <img src="images/sensor/lmi_qrcode.png" alt="LMI Technologies 官方公众号" style="width: 180px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.12);" />
+  <p style="color: #666; font-size: 14px; margin-top: 10px;"><b>扫码关注 LMI Technologies 官方微信</b><br><span style="font-size: 12px; color: #888;">获取最新技术白皮书、行业应用案例与样机申请</span></p>
+</div>
